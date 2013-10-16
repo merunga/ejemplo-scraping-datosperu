@@ -12,8 +12,8 @@ Harvestman.crawl crawl_url, (1..2) do # vamos a visitar solo las paginas 1 y 2:
     inner_crawl_url = base_url + (it.xpath '@href')
     Harvestman.crawl inner_crawl_url do # un nuevo crawl al link encontrado
       begin
-      	puts "Nombre:" +( xpath "//header/h1" ) # el nombre de la empresa está en el tag H1
-      	puts "RUC:" +( xpath "//dl[3]/dd" ) # el duc está en el cuarto DL dentro del tag DD
+      	puts "Nombre:" +( xpath "//header/h1" ) # el Nombre de la empresa está en el tag H1
+      	puts "RUC:" +( xpath "//dl[3]/dd" ) # el RUC está en el cuarto DL dentro del tag DD
       rescue
         puts "***** Error con url: "+ inner_crawl_url # Ooops! o la data no está u otra cosa paso
       ensure
